@@ -1,23 +1,32 @@
-//variables
+//Variables
 let todos = []
+
 //Element storage
 $addBtn = $('#new-task')
 $newTaskInput = $('#new-task-input')
 $addTask = $('#add-task')
 $taskList = $('#todo-list')
+$linkList = $('#link-list')
 
 //Click listeners
 $addBtn.on('click', showForm)
 $addTask.on('click', addTask)
 
-//Functions
+
+
 //on page load, get list of todos from localstorage
 $(document).ready(function(){
     todos = JSON.parse(localStorage.getItem('todos'))
     if (!todos) todos = [];
     renderList()
+
+    chrome.bookmarks.getTree(function(bookmarkTreeNodes) {
+        updateLinkList(bookmarkTreeNodes)
+    });
 })
 
+
+//Functions
 //Show add todo button and input
 function showForm(){
     $newTaskInput.toggleClass('hidden')
@@ -41,6 +50,7 @@ function addTask(){
     $addBtn.toggleClass('hidden')
 }
 
+//toggle todo state (done or not done)
 function toggleTodo(num) {
     return (() => {
         todos[num].done = !todos[num].done
@@ -49,6 +59,7 @@ function toggleTodo(num) {
     })
 }
 
+//delete todo
 function deleteTodo(num) {
     return (() => {
         todos.splice(num, 1)
@@ -57,6 +68,22 @@ function deleteTodo(num) {
     })
 }
 
+//update list of links based on users bookmarks
+function updateLinkList(tree) {
+    let bookmarks = tree[0]['children'][0]['children']
+    if (bookmarks.length > 0) {
+        $linkList.empty()
+        for (i=0; i<bookmarks.length; i++) {
+            let bookmark = $(`<li id='bookmark-${i}'>
+                <a href='bookmark[i].url'>${bookmarks[i].title}</a>
+            </li>`)
+            $linkList.append(bookmark)
+        }
+    }
+    
+}
+
+//rerender todo list
 function renderList() {
     $taskList.empty()
     for (i=0; i< todos.length; i++) {
@@ -70,3 +97,4 @@ function renderList() {
         $(`#delete-${i}`).on('click', deleteTodo(i))
     }
 }
+

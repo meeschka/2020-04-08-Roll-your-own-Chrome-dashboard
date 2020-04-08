@@ -1,11 +1,15 @@
 {
-    "manifest_version": 1,
+    "manifest_version": 2,
     "name": "Mintbean Career Hack Extension",
     "version": "1.0",
     "chrome_url_overrides" : {
       "newtab": "newtab.html"
     },
     "permissions": [
-        "bookmarks"
-      ]
+        "bookmarks",
+        "https://code.jquery.com/jquery-3.4.1.min.js"
+      ],
+    "background": {
+        "scripts": ["script.js", "jquery-3.4.1.min.js"]
+    }
   }
