@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>New Tab</title>
+    <meta name="description" content="New Tab">
+    <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class='dog-pics'>
+        <img src='assets/pics/dog-1.jpg' alt='dog-1'>
+        <img src='assets/pics/dog-2.jpg' alt='dog-2'>
+        <img src='assets/pics/dog-3.jpg' alt='dog-3'>
+    </section>
+    <section class='content'>
+        <h1 class='motto'>''Be the person your dog thinks you are''</h1>
+        <div class='container'>
+            <div class='links'>
+                <h3>Your favorites </h3>
+                <ul>
+                    <li><a href='http://www.gmail.com'>Gmail</a></li>
+                    <li><a href='http://www.cbc.ca'>News</a></li>
+                    <li><a href='http://www.youtube.com'>Youtube</a></li>
+                    <li><a href='http://www.udemy.com'>Udemy</a></li>
+                    <li><a href='http://www.reddit.com'>Reddit</a></li>
+                </ul>
+            </div>
+            <div class='todo'>
+                <h3>Focus for today</h3>
+                <ul id='todo-list'>
+                </ul>
+                <button id='new-task'>Add new task</button>
+                <input class='hidden' id='new-task-input' type='text'></input>
+                <button type='submit' class='hidden' id='add-task'>Add task</button>
+            </div>
+        </div>
+    </section>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src='script.js' defer></script>
+</body>
+</html>

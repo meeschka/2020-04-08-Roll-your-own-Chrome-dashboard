@@ -1,0 +1,100 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(59,79,105)
+}
+.dog-pics {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 500px;
+    margin-left: 8%;
+}
+
+.dog-pics img {
+    height: 33.3%;
+    object-fit: contain;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.motto {
+    margin: 2em;
+    font-size: 3em;
+    text-align: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: rgb(102,191,199)
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links {
+    border-right: 1px solid rgb(102,191,199);
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+li {
+    line-height: 1.8em;
+}
+
+li.done {
+    text-decoration: line-through;
+}
+
+h3 {
+    border-bottom: 2px solid rgb(102,191,199);
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: white;
+    border: 1px solid rgb(59,79,105);
+    border-radius: 2px;
+    padding: 5px;
+    font-size: 1.2em;
+    color: rgb(59,79,105);
+}
+
+li button {
+    padding: 0;
+    border: none;
+}
+
+li button:hover {
+    color: rgb(235, 95, 134)
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(59,79,105);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
